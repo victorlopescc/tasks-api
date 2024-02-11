@@ -17,8 +17,10 @@ export class Database {
         fs.writeFile(databasePath, JSON.stringify(this.#database));
     }
 
-    select() {
+    select(table) {
+        const data = this.#database[table];
 
+        return data;
     }
 
     insert(table, data) {
